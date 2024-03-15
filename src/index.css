@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.styled-scrollbars {
+  --scrollbar-foreground: #1e293b;
+  --scrollbar-background: #020617;
+  --scrollbar-size: 10px;
+  scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
+}
+.styled-scrollbars::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+.styled-scrollbars::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-foreground);
+}
+.styled-scrollbars::-webkit-scrollbar-track {
+  background: var(--scrollbar-background);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body, #root {
+  position: relative;
+}

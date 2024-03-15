@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 type CheckboxProps = {
   className?: string;
   handleCheckbox: React.ChangeEventHandler<HTMLInputElement>;
@@ -6,7 +8,7 @@ type CheckboxProps = {
 };
 
 const Checkbox = ({ className, handleCheckbox, isChecked, taskId }: CheckboxProps) => (
-  <div className={`flex ${className}`}>
+  <div className={clsx("flex", className)}>
     <input
       type="checkbox"
       id={taskId}

@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 type ButtonDeleteProps = {
   className?: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
@@ -5,13 +7,13 @@ type ButtonDeleteProps = {
 
 const ButtonDelete = ({ className, onClick }: ButtonDeleteProps) => {
   return (
-    <button className={`h-6 w-6 grid ${className}`} onClick={onClick}>
+    <button className={clsx("h-6 w-6 grid", className)} onClick={onClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="13"
         height="14"
         viewBox="0 0 13 14"
-        className="place-self-center fill-zinc-500"
+        className="place-self-center fill-zinc-500 hover:fill-rose-900"
       >
         <path d="M8.20214 4.98547H6.87158V10.5073H8.20214V4.98547Z" />
         <path d="M5.46239 4.98547H4.13184V10.5073H5.46239V4.98547Z" />

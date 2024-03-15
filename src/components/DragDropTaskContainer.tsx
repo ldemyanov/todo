@@ -4,7 +4,9 @@ import { setTasksOrder } from "../store/todoSlice";
 import DraggableTask from "./task/DraggableTask";
 
 const DragDropTaskContainer = () => {
-  const { tasks, tasksOrder } = useAppSelector((state) => state.todoList);
+  const { tasks, tasksOrder, filter } = useAppSelector((state) => state.todoList);
+
+  console.log(tasksOrder);
 
   const dispatch = useAppDispatch();
 
@@ -15,7 +17,7 @@ const DragDropTaskContainer = () => {
       return;
     }
 
-    const newTaskOrders = tasksOrder.slice();
+    const newTaskOrders = tasksOrder[filter].slice();
     newTaskOrders.splice(source.index, 1);
     newTaskOrders.splice(destination.index, 0, draggableId);
 
@@ -27,7 +29,7 @@ const DragDropTaskContainer = () => {
       <Droppable droppableId="taskDroppobleZone">
         {(provided) => (
           <div ref={provided.innerRef} {...provided.droppableProps}>
-            {tasksOrder.map((taskId, index) => {
+            {tasksOrder[filter].map((taskId, index) => {
               const task = tasks[taskId];
               if (task) {
                 return <DraggableTask index={index} key={taskId} task={task} />;

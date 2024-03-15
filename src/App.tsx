@@ -1,7 +1,7 @@
 import Background from "./components/ui/Background";
 import Container from "./components/ui/Container";
 import Logo from "./components/ui/Logo";
-import TodoApp from "./components/todoApp/TodoApp";
+import TodoApp from "./components/TodoApp";
 
 export default function App() {
   return (

@@ -1,16 +1,18 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
+import store, { persistor }  from "./store/reduxStore";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 import "./index.css";
 import "flowbite";
 
-import { store } from "./store/reduxStore";
-import { Provider } from "react-redux";
+
+
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <Provider store={store}>
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
       <App />
-    </Provider>
-  </React.StrictMode>
+    </PersistGate>
+  </Provider>
 );

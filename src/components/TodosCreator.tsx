@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useAppDispatch } from "../../hooks/redux";
-import { Todo } from "../../types";
-import { getId } from "../../utils/getId";
-import { addTask } from "../../store/todoSlice";
+import { useAppDispatch } from "../hooks/redux";
+import { Todo } from "../types";
+import { getId } from "../utils/getId";
+import { addTask } from "../store/todoSlice";
 import ButtonAdd from "./ButtonAdd";
 import Input from "./Input";
 

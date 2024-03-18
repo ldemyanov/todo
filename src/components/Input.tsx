@@ -12,7 +12,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({ onEnter }, ref) => {
   return (
     <input
       ref={ref}
-      defaultValue="123"
+      defaultValue=""
       type="text"
       className="bg-slate-800 border-2 border-slate-950 text-gray-200 text-sm rounded-lg focus:border-blue-500 block w-full p-2.5 focus:outline-none"
       placeholder="Enter what you want to do"

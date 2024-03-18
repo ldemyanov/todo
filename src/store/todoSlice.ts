@@ -33,11 +33,20 @@ export const todosSlice = createSlice({
     addTask: (state, { payload }: PayloadAction<Todo>) => {
       state.tasks[payload.id] = payload;
       Object.keys(state.tasksOrder).map((filterValue) => {
-        state.tasksOrder[filterValue as Filter].push(payload.id);
+        if (filterValue !== "Completed") {
+          state.tasksOrder[filterValue as Filter].push(payload.id);
+        }
       });
     },
     toggleTaskById: (state, { payload }: PayloadAction<string>) => {
       state.tasks[payload].isDone = !state.tasks[payload].isDone;
+      if (state.tasks[payload].isDone) {
+        state.tasksOrder["Completed"].push(payload);
+        state.tasksOrder["Worked"] = state.tasksOrder["Worked"].filter((taskId) => taskId !== payload);
+      } else {
+        state.tasksOrder["Worked"].push(payload);
+        state.tasksOrder["Completed"] = state.tasksOrder["Completed"].filter((taskId) => taskId !== payload);
+      }
     },
     removeTaskById: (state, { payload }: PayloadAction<string>) => {
       delete state.tasks[payload];

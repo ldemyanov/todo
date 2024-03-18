@@ -21,7 +21,7 @@ const initialState: TodosState = {
   },
   tasksOrder: {
     "All": ["default-todo-0000"],
-    "Completed": ["default-todo-0000"],
+    "Completed": [],
     "Worked": ["default-todo-0000"]
   }
 }

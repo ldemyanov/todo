@@ -1,6 +1,6 @@
-import Background from "./components/ui/Background";
-import Container from "./components/ui/Container";
-import Logo from "./components/ui/Logo";
+import Background from "./components/wrapper/Background";
+import Container from "./components/wrapper/Container";
+import Logo from "./components/wrapper/Logo";
 import TodoApp from "./components/TodoApp";
 
 export default function App() {

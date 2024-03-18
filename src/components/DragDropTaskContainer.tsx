@@ -6,8 +6,6 @@ import DraggableTask from "./task/DraggableTask";
 const DragDropTaskContainer = () => {
   const { tasks, tasksOrder, filter } = useAppSelector((state) => state.todoList);
 
-  console.log(tasksOrder);
-
   const dispatch = useAppDispatch();
 
   const handleDragEnd: OnDragEndResponder = (result) => {
